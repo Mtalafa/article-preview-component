@@ -1,0 +1,243 @@
+:root {
+  --main: hsl(217, 19%, 35%);
+  --text-1: hsl(214, 17%, 51%);
+  --text-2: hsl(212, 23%, 69%);
+  --background-1: hsl(210, 46%, 95%);
+  --background-2: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: var(--background-1);
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-header {
+  font-size: 2rem;
+  letter-spacing: 0.25px;
+  color: var(--main);
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
+}
+
+.subheading {
+  color: var(--text-2);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 4px;
+  padding-left: 1rem;
+}
+
+.text {
+  color: var(--text-1);
+  margin-bottom: 2rem;
+}
+
+.text,
+.name,
+.date {
+  font-size: 1.3rem;
+  line-height: 1.55;
+  letter-spacing: 0.1px;
+}
+
+.drawer-img-box {
+  max-width: 35rem;
+}
+
+.drawer-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px 0 0 10px;
+}
+
+.right-side-container {
+  position: relative;
+  max-width: 44.5rem;
+  background-color: var(--background-2);
+  padding: 3.2rem 4rem;
+  margin-left: -6.5rem;
+  border-radius: 0 10px 10px 0;
+}
+
+.author-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar-box {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.avatar-img-box {
+  width: 4rem;
+  height: 4rem;
+}
+
+.avatar-img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.name {
+  font-weight: bold;
+  color: var(--main);
+}
+
+.date {
+  color: var(--text-2);
+}
+
+.btn {
+  height: 3.2rem;
+  width: 3.2rem;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--background-1);
+  transition: all 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--main);
+  stroke: var(--background-2);
+}
+
+.btn-hidden {
+  display: none;
+}
+
+.share-box {
+  max-width: 24.8rem;
+  background-color: var(--main);
+  padding: 1.6rem 3rem;
+  border-radius: 10px;
+  position: absolute;
+  top: 13.5rem;
+  left: 26.8rem;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/*Adds the arrow at the bottom of the invisible box*/
+.share:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 80%;
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-top: 25px solid var(--main);
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 1.625rem;
+}
+
+/*742px*/
+
+@media only screen and (max-width: 47em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .text {
+    margin-bottom: 3.2rem;
+  }
+
+  .drawer-img-box {
+    max-width: 32.7rem;
+  }
+
+  .drawer-img {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .right-side-container {
+    max-width: 32.7rem;
+    margin: 0;
+    padding: 3.6rem 3.2rem 2rem;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .share-box {
+    max-width: 32.7rem;
+    left: 0;
+    top: 100%;
+    transform: translateY(-100%);
+    border-radius: 0 0 10px 10px;
+    padding: 2.2rem 3.2rem;
+
+    display: flex;
+    gap: 5.6rem;
+  }
+
+  .share:after {
+    display: none;
+  }
+
+  .btn-hidden {
+    display: block;
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: var(--main);
+    stroke: var(--background-1);
+    transition: all 0.3s;
+  }
+
+  .btn-hidden:hover {
+    background-color: var(--background-1);
+  }
+}
